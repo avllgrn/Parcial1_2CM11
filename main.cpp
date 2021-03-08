@@ -72,16 +72,23 @@ public:
 
 
 
-
+void calculaCuadrante(Punto P);
 
 int main(void){
     //Codifica un programa que pida las coordenadas de un punto
     //en un plano cartesiano, y diga en cual cuadrante esta
-    Punto P;
+    //con una funcion de usuario
+    Punto Q;
 
-    cout<<"Ingresa P "<<endl;
-    P.pideleAlUsuarioTusDatos();
+    cout<<"Ingresa Q "<<endl;
+    Q.pideleAlUsuarioTusDatos();
 
+    calculaCuadrante(Q);
+
+    return 0;
+}
+
+void calculaCuadrante(Punto P){
     if(P.dameTuX()>0 && P.dameTuY()>0){
         cout<<"P esta en el cuadrante I"<<endl;
     }
@@ -109,6 +116,4 @@ int main(void){
     else{
         cout<<"P esta en el origen"<<endl;
     }
-
-    return 0;
 }
