@@ -72,48 +72,85 @@ public:
 
 
 
-void calculaCuadrante(Punto P);
+int calculaCuadrante(Punto P);
+double calculaDistanciaEntre(Punto A,Punto B);
+double calculaPendienteDados(Punto A,Punto B);
+Punto suma(Punto A,Punto B);
+Punto resta(Punto A,Punto B);
 
 int main(void){
-    //Codifica un programa que pida las coordenadas de un punto
-    //en un plano cartesiano, y diga en cual cuadrante esta
-    //con una funcion de usuario
-    Punto Q;
+    Punto P, Q, C, D;
+    double d, m;
 
-    cout<<"Ingresa Q "<<endl;
+    cout<<"Ingresa A "<<endl;
+    P.pideleAlUsuarioTusDatos();
+    cout<<"Ingresa B "<<endl;
     Q.pideleAlUsuarioTusDatos();
 
-    calculaCuadrante(Q);
+    d = calculaDistanciaEntre(P,Q);
+    m = calculaPendienteDados(P,Q);
+
+    C = suma(P,Q);
+    D = resta(P,Q);
+
+    cout<<"d = " << d << endl
+        <<"m = " << m << endl;
+    cout<<"A+B = ";C.muestraTusDatos();cout<<endl;
+    cout<<"A-B = ";D.muestraTusDatos();cout<<endl;
 
     return 0;
 }
 
-void calculaCuadrante(Punto P){
+double calculaDistanciaEntre(Punto A,Punto B){
+    return sqrt(
+                pow(B.dameTuY()-A.dameTuY(),2)
+                +
+                pow(B.dameTuX()-A.dameTuX(),2)
+    );
+}
+double calculaPendienteDados(Punto A,Punto B){
+    return  (B.dameTuY()-A.dameTuY())
+            /
+            (B.dameTuX()-A.dameTuX());
+}
+Punto suma(Punto A,Punto B){
+    Punto C;
+    C.modificaTuX(A.dameTuX()+B.dameTuX());
+    C.modificaTuY(A.dameTuY()+B.dameTuY());
+    return C;
+}
+Punto resta(Punto A,Punto B){
+    Punto C;
+    C.modificaTuX(A.dameTuX()-B.dameTuX());
+    C.modificaTuY(A.dameTuY()-B.dameTuY());
+    return C;
+}
+int calculaCuadrante(Punto P){
     if(P.dameTuX()>0 && P.dameTuY()>0){
-        cout<<"P esta en el cuadrante I"<<endl;
+        return 1;
     }
     else if(P.dameTuX()<0 && P.dameTuY()>0){
-        cout<<"P esta en el cuadrante II"<<endl;
+        return 2;
     }
     else if(P.dameTuX()<0 && P.dameTuY()<0){
-        cout<<"P esta en el cuadrante III"<<endl;
+        return 3;
     }
     else if(P.dameTuX()>0 && P.dameTuY()<0){
-        cout<<"P esta en el cuadrante IV"<<endl;
+        return 4;
     }
     else if(P.dameTuX()>0 && P.dameTuY()==0){
-        cout<<"P esta en X+"<<endl;
+        return 5;
     }
     else if(P.dameTuX()<0 && P.dameTuY()==0){
-        cout<<"P esta en X-"<<endl;
+        return 6;
     }
     else if(P.dameTuX()==0 && P.dameTuY()>0){
-        cout<<"P esta en Y+"<<endl;
+        return 7;
     }
     else if(P.dameTuX()==0 && P.dameTuY()<0){
-        cout<<"P esta en Y-"<<endl;
+        return 8;
     }
     else{
-        cout<<"P esta en el origen"<<endl;
+        return 0;
     }
 }
