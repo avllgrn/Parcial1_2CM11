@@ -1,39 +1,17 @@
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include <fstream>
 using namespace std;
 
 int main(void){
-    ofstream ArchivoDeSalida("prueba.txt");
+    srand(time(NULL));
 
-    ArchivoDeSalida <<123<<endl
-                    <<45.67<<endl
-                    <<'@'<<endl
-                    <<"Ferrocarrilero"<<endl;
+    cout<<"Numero entre [0, 10) "<< (rand() % 10) <<endl;
 
-    ArchivoDeSalida.close();
+    cout<<"Numero entre [0, 50) "<< (rand() % 50) <<endl;
 
-
-    int entero;
-    float flotante;
-    char caracter;
-    string cadena;
-
-    cout<<"Entero: "<<entero<<endl
-        <<"Flotante: "<<flotante<<endl
-        <<"Caracter: "<<caracter<<endl
-        <<"Cadena: "<<cadena<<endl<<endl;
-
-    ifstream ArchivoDeEntrada("prueba.txt");
-    ArchivoDeEntrada>>entero
-                    >>flotante
-                    >>caracter
-                    >>cadena;
-    ArchivoDeEntrada.close();
-
-    cout<<"Entero: "<<entero<<endl
-        <<"Flotante: "<<flotante<<endl
-        <<"Caracter: "<<caracter<<endl
-        <<"Cadena: "<<cadena<<endl<<endl;
+    cout<<"Numero entre [0, 1000) "<< (rand() % 1000) <<endl;
 
     return 0;
 }
