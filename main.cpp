@@ -4,20 +4,36 @@ using namespace std;
 
 int main(void){
     ofstream ArchivoDeSalida("prueba.txt");
-    ArchivoDeSalida<<"Hola,\nmundo!"<<endl
-                   <<"Mas lineas"<<endl
-                   <<32<<endl
-                   <<123.456<<endl
-                   <<'@'<<endl<<endl;
 
-    float a, b, c;
-    cout<<"Dame a ";cin>>a;
-    cout<<"Dame b ";cin>>b;
-    c=a+b;
-    cout<<a<<" + "<<b<<" = "<<c<<endl;
-    ArchivoDeSalida<<a<<" + "<<b<<" = "<<c<<endl;
-
+    ArchivoDeSalida <<123<<endl
+                    <<45.67<<endl
+                    <<'@'<<endl
+                    <<"Ferrocarrilero"<<endl;
 
     ArchivoDeSalida.close();
+
+
+    int entero;
+    float flotante;
+    char caracter;
+    string cadena;
+
+    cout<<"Entero: "<<entero<<endl
+        <<"Flotante: "<<flotante<<endl
+        <<"Caracter: "<<caracter<<endl
+        <<"Cadena: "<<cadena<<endl<<endl;
+
+    ifstream ArchivoDeEntrada("prueba.txt");
+    ArchivoDeEntrada>>entero
+                    >>flotante
+                    >>caracter
+                    >>cadena;
+    ArchivoDeEntrada.close();
+
+    cout<<"Entero: "<<entero<<endl
+        <<"Flotante: "<<flotante<<endl
+        <<"Caracter: "<<caracter<<endl
+        <<"Cadena: "<<cadena<<endl<<endl;
+
     return 0;
 }
