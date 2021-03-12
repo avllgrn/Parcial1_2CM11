@@ -7,11 +7,31 @@ using namespace std;
 int main(void){
     srand(time(NULL));
 
-    cout<<"Numero entre [0, 10) "<< (rand() % 10) <<endl;
+    int V[100], V2[100], i, n;
 
-    cout<<"Numero entre [0, 50) "<< (rand() % 50) <<endl;
+    cout<<"Dame n ";cin>>n;
 
-    cout<<"Numero entre [0, 1000) "<< (rand() % 1000) <<endl;
+    for(i=0;i<n;i++)
+        V[i] = rand() % 100;
+
+    ofstream AS("datos.txt");
+
+    for(i=0;i<n;i++)
+        AS<<V[i]<<endl;
+
+    AS.close();
+
+
+
+    ifstream AE("datos.txt");
+
+    for(i=0;i<n;i++)
+        AE>>V2[i];
+
+    AE.close();
+
+    for(i=0;i<n;i++)
+        cout << "V2["<<i<<"] " << V2[i] << endl;
 
     return 0;
 }
