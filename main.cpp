@@ -3,21 +3,19 @@ using namespace std;
 
 int main(void){
 
-    string cadena, cadena2, cadena3;
-
+    string origen, destino;
     int i, n;
 
     cout<<"Ingresa una cadena ";
-    getline(cin, cadena);
-    cout<<"Ingresa otra cadena ";
-    getline(cin, cadena2);
+    getline(cin, origen);
+    n = origen.size();
 
-    cadena3.append(cadena);
-    cadena3.append(cadena2);
+    cout<<"Tu cadena: "<<origen<<endl;
 
-    cout<<"Tu cadena: "<<cadena<<endl;
-    cout<<"Tu cadena2: "<<cadena2<<endl;
-    cout<<"cadena3  : "<<cadena3<<endl<<endl;
+    for(i=0;i<n;i++){
+        destino.push_back(origen.at(i));
+        cout<<"destino: "<<destino<<endl;
+    }
 
     return 0;
 }
