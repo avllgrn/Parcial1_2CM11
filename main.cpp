@@ -3,7 +3,8 @@ using namespace std;
 
 int main(void){
 
-    string cadena;
+    string cadena, cadena2;
+
     int i, n;
 
     cout<<"Ingresa una cadena ";
@@ -11,11 +12,48 @@ int main(void){
     n = cadena.size();
 
     cout<<"Tu cadena: "<<cadena<<endl;
-    cout<<"Tiene "<<n<<" caracteres."<<endl<<endl;
-    cout<<"cadena["<<4<<"] = "<<cadena.at(4)<<endl<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
 
-    for(i=0;i<n;i++)
-        cout<<"cadena["<<i<<"] = "<<cadena.at(i)<<endl;
+    cadena2.append(cadena);
+    cout<<"Tu cadena: "<<cadena<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
+
+    cadena2.append(cadena);
+    cout<<"Tu cadena: "<<cadena<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
+
+    cadena2.append(cadena);
+    cout<<"Tu cadena: "<<cadena<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
+
+    cadena2.append(cadena);
+    cout<<"Tu cadena: "<<cadena<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
+
+    cadena2.append(cadena);
+    cout<<"Tu cadena: "<<cadena<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
+
+    cadena2.append(cadena);
+    cout<<"Tu cadena: "<<cadena<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
+
+    cadena2.append(cadena);
+    cout<<"Tu cadena: "<<cadena<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
+
+    cadena2.append(cadena);
+    cout<<"Tu cadena: "<<cadena<<endl;
+    cout<<"cadena2  : "<<cadena2<<endl<<endl;
+    system("pause");
 
     return 0;
 }
