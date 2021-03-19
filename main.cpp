@@ -3,19 +3,23 @@ using namespace std;
 
 int main(void){
 
-    string origen, destino;
+    string cadena, busqueda;
     int i, n;
 
     cout<<"Ingresa una cadena ";
-    getline(cin, origen);
-    n = origen.size();
-
-    cout<<"Tu cadena: "<<origen<<endl;
-
+    getline(cin, cadena);
+    cout<<"Ingresa cadena a buscar ";
+    getline(cin, busqueda);
+    n = cadena.size();
     for(i=0;i<n;i++){
-        destino.push_back(origen.at(i));
-        cout<<"destino: "<<destino<<endl;
+        cout<<"["<<i<<"] = "<<cadena.at(i)<<endl;
     }
+
+    cout<<cadena.find(busqueda)<<endl;
+    cout<<cadena.find(' ')<<endl<<endl;
+
+    cout<<cadena.rfind(busqueda)<<endl;
+    cout<<cadena.rfind(' ')<<endl<<endl;
 
     return 0;
 }
