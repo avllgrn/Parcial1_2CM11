@@ -1,26 +1,28 @@
 #include <iostream>
+#include "Entero.h"
 using namespace std;
+
+Entero suma(Entero X, Entero Y);
 
 int main(void){
 
-    string cadena, subcadena, subcadena2;
-    int i, n, inicio, fin;
+    Entero A, B, C;
 
-    cout<<"Ingresa una cadena ";
-    getline(cin, cadena);
-    n = cadena.size();
-    for(i=0;i<n;i++){
-        cout<<"["<<i<<"] = "<<cadena.at(i)<<endl;
-    }
+    //1. Pide datos
+    A.pideleAlUsuarioTusDatos();
+    B.pideleAlUsuarioTusDatos();
 
-    cout<<"Dame inicio ";cin>>inicio;
-    cout<<"Dame fin ";cin>>fin;
-    subcadena.append(cadena.substr(inicio));
-    subcadena2.append(cadena.substr(0,fin));
+    //2. Calcula formulas
+    C = suma(A, B);
 
-    cout<<"cadena    : "<<cadena<<endl;
-    cout<<"subcadena : "<<subcadena<<endl;
-    cout<<"subcadena2: "<<subcadena2<<endl;
+    //3. Muestra resultados
+    C.muestraTusDatos();
 
     return 0;
+}
+
+Entero suma(Entero X, Entero Y){
+    Entero Resultante;
+    Resultante.modificaTuValor(X.dameTuValor() + Y.dameTuValor());
+    return Resultante;
 }
