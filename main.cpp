@@ -1,74 +1,84 @@
 #include <iostream>
-#include "Entero.h"
 using namespace std;
 
-Entero suma(Entero X, Entero Y);
-Entero resta(Entero Q, Entero R);
+class Complejo{
+private:
+    double real;
+    double imaginario;
+public:
+    Complejo(void){
+        this->real = 0.0;
+        this->imaginario = 0.0;
+        //cout << "Objeto construido, this -> " << this << endl;
+    };
+    Complejo(double real, double imaginario){
+        this->real = real;
+        this->imaginario = imaginario;
+        //cout << "Objeto construido, this -> " << this << endl;
+    };
+    ~Complejo(void){
+        //cout << "Objeto destruido, this -> " << this << endl;
+    };
+    void pideleAlUsuarioTusDatos(void){
+        cout<<"Dame mi real ";
+        cin>>this->real;
+        cout<<"Dame mi imaginario ";
+        cin>>this->imaginario;
+    };
+    void muestraTusDatos(void){
+        cout << this->real;
+        if(this->imaginario < 0)
+            cout << this->imaginario;
+        else
+            cout << "+" << this->imaginario;
+        cout<<"i";
+    };
+    double dameTuReal(void){
+        return this->real;
+    };
+    void modificaTuReal(double real){
+        this->real = real;
+    };
+    double dameTuImaginario(void){
+        return this->imaginario;
+    };
+    void modificaTuImaginario(double imaginario){
+        this->imaginario = imaginario;
+    };
+};
+
+Complejo multiplica(Complejo X, Complejo Y);
 
 int main(void){
 
-    Entero A, B, C;
+    Complejo A, B, C;
 
     //1. Pide datos
     A.pideleAlUsuarioTusDatos();
     B.pideleAlUsuarioTusDatos();
 
     //2. Calcula formulas
-    C = resta(A, B);
+    C = multiplica(A, B);
 
     //3. Muestra resultados
     C.muestraTusDatos();
 
-    //1. Pide datos
-    A.pideleAlUsuarioTusDatos();
-    B.pideleAlUsuarioTusDatos();
-
-    //2. Calcula formulas
-    C = resta(A, B);
-
-    //3. Muestra resultados
-    C.muestraTusDatos();
-
-    //1. Pide datos
-    A.pideleAlUsuarioTusDatos();
-    B.pideleAlUsuarioTusDatos();
-
-    //2. Calcula formulas
-    C = resta(A, B);
-
-    //3. Muestra resultados
-    C.muestraTusDatos();
-
-    //1. Pide datos
-    A.pideleAlUsuarioTusDatos();
-    B.pideleAlUsuarioTusDatos();
-
-    //2. Calcula formulas
-    C = resta(A, B);
-
-    //3. Muestra resultados
-    C.muestraTusDatos();
-
-    //1. Pide datos
-    A.pideleAlUsuarioTusDatos();
-    B.pideleAlUsuarioTusDatos();
-
-    //2. Calcula formulas
-    C = resta(A, B);
-
-    //3. Muestra resultados
-    C.muestraTusDatos();
 
     return 0;
 }
 
-Entero suma(Entero X, Entero Y){
-    Entero Resultante;
-    Resultante.modificaTuValor(X.dameTuValor() + Y.dameTuValor());
+Complejo multiplica(Complejo X, Complejo Y){
+    Complejo Resultante;
+    //R3 = R1*R2 - I1*I2
+    //I3 = R1*I1 + R2*I1
+
+    Resultante.modificaTuReal(
+        X.dameTuReal()*Y.dameTuReal() - X.dameTuImaginario()*Y.dameTuImaginario()
+    );
+
+    Resultante.modificaTuImaginario(
+        X.dameTuReal()*Y.dameTuImaginario() + Y.dameTuReal()*X.dameTuImaginario()
+    );
+
     return Resultante;
-}
-Entero resta(Entero Q, Entero R){
-    Entero Resultado;
-    Resultado.modificaTuValor(Q.dameTuValor() - R.dameTuValor());
-    return Resultado;
 }
