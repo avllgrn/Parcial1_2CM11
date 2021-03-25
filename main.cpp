@@ -3,6 +3,7 @@
 using namespace std;
 
 Entero suma(Entero X, Entero Y);
+Entero resta(Entero Q, Entero R);
 
 int main(void){
 
@@ -13,7 +14,47 @@ int main(void){
     B.pideleAlUsuarioTusDatos();
 
     //2. Calcula formulas
-    C = suma(A, B);
+    C = resta(A, B);
+
+    //3. Muestra resultados
+    C.muestraTusDatos();
+
+    //1. Pide datos
+    A.pideleAlUsuarioTusDatos();
+    B.pideleAlUsuarioTusDatos();
+
+    //2. Calcula formulas
+    C = resta(A, B);
+
+    //3. Muestra resultados
+    C.muestraTusDatos();
+
+    //1. Pide datos
+    A.pideleAlUsuarioTusDatos();
+    B.pideleAlUsuarioTusDatos();
+
+    //2. Calcula formulas
+    C = resta(A, B);
+
+    //3. Muestra resultados
+    C.muestraTusDatos();
+
+    //1. Pide datos
+    A.pideleAlUsuarioTusDatos();
+    B.pideleAlUsuarioTusDatos();
+
+    //2. Calcula formulas
+    C = resta(A, B);
+
+    //3. Muestra resultados
+    C.muestraTusDatos();
+
+    //1. Pide datos
+    A.pideleAlUsuarioTusDatos();
+    B.pideleAlUsuarioTusDatos();
+
+    //2. Calcula formulas
+    C = resta(A, B);
 
     //3. Muestra resultados
     C.muestraTusDatos();
@@ -25,4 +66,9 @@ Entero suma(Entero X, Entero Y){
     Entero Resultante;
     Resultante.modificaTuValor(X.dameTuValor() + Y.dameTuValor());
     return Resultante;
+}
+Entero resta(Entero Q, Entero R){
+    Entero Resultado;
+    Resultado.modificaTuValor(Q.dameTuValor() - R.dameTuValor());
+    return Resultado;
 }
